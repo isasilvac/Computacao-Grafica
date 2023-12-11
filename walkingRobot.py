@@ -21,7 +21,7 @@ def obter_textura(file_name):
     image = Image.open(file_name)
     width, height = image.size
     image_data = image.tobytes("raw", "RGB", 0, -1)
-    texture_id = glGentexturas(1)
+    texture_id = glGenTextures(1)
 
     glBindTexture(GL_TEXTURE_2D, texture_id)
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image_data)
